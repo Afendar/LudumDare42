@@ -9,7 +9,8 @@ Player::Player(Level* level, Game* game) :
 	m_heldBox(NULL),
 	m_timer(0),
 	m_alpha(255),
-	m_displaySatisfactionIcon(false)
+	m_displaySatisfactionIcon(false),
+	m_timeUpdate(0)
 {
 	m_position.x = 15 * 16 * Game::ZOOM_FACTOR;
 	m_position.y = 8 * 16 * Game::ZOOM_FACTOR;
@@ -98,6 +99,7 @@ void Player::update(float dt)
 		}
 	}
 
+	m_timeUpdate += dt;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		m_animation->play(*m_walkingLeftAnim);
@@ -122,7 +124,7 @@ void Player::update(float dt)
 		y++;
 	}
 
-	if(isBlocked(x, y))
+	if (isBlocked(x, y))
 	{
 		return;
 	}
@@ -241,7 +243,7 @@ void Player::takeBox()
 					return;
 				}
 			}
-			std::cout << "No order founded" << std::endl;
+			//std::cout << "No order founded" << std::endl;
 			return;
 		}
 

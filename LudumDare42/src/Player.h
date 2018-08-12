@@ -40,7 +40,7 @@ class Player : public Entity
 
 		int m_alpha;
 		float m_timer;
-		bool m_displaySatisfactionIcon;
+		bool m_displaySatisfactionIcon, m_timeUpdate;
 
 		Graphics::Animation* m_walkingLeftAnim, *m_walkingRightAnim;
 		Graphics::AnimatedSprite* m_animation;

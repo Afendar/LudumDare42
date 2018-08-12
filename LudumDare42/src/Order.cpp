@@ -29,7 +29,7 @@ void Order::update(float dt)
 	if (m_timer > m_timeToPrepare)
 	{
 		m_canceled = true;
-		std::cout << "Order Canceled: " << m_timer << std::endl;
+		//std::cout << "Order Canceled: " << m_timer << std::endl;
 	}
 }
 

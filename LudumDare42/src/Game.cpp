@@ -26,6 +26,8 @@ Game::Game() :
 	m_displayTutorial(false),
 	m_deliveries(0)
 {
+	m_window.setFramerateLimit(180);
+
 	if (!m_start.loadFromFile("gfx/title.png"))
 	{
 		std::cerr << "Fail to load title.png" << std::endl;
@@ -259,11 +261,11 @@ void Game::update()
 	if (m_timer > m_delayBetweenOrders)
 	{
 		m_delayBetweenOrders = m_random->getNumberInRange(2, 4);
-		std::cout << "waiting: " << m_delayBetweenOrders << "s" << std::endl;
+		//std::cout << "waiting: " << m_delayBetweenOrders << "s" << std::endl;
 		m_timer = 0;
 		if (m_random->getNumberInRange(0, 1))
 		{
-			std::cout << "generate Order" << std::endl;
+			//std::cout << "generate Order" << std::endl;
 			switch (m_random->getNumberInRange(0, 3))
 			{
 				case Article::BEACH_ACCESSORIES:

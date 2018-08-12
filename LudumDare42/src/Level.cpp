@@ -126,11 +126,11 @@ void Level::update(float dt)
 	if (m_timerRestock > m_delayBetweenRestocks)
 	{
 		m_delayBetweenRestocks = m_random->getNumberInRange(6, 12);
-		std::cout << "waiting restock: " << m_delayBetweenRestocks << "s" << std::endl;
+		//std::cout << "waiting restock: " << m_delayBetweenRestocks << "s" << std::endl;
 		m_timerRestock = 0;
 		if (m_random->getNumberInRange(0, 3) > 1)
 		{
-			std::cout << "generate Restock" << std::endl;
+			//std::cout << "generate Restock" << std::endl;
 
 			int nbArticles = m_random->getNumberInRange(1, 4);
 			Box* b;
